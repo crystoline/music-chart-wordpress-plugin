@@ -1,0 +1,332 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+a[disabled]{
+    cursor: not-allowed !important;
+}
+.music-chart > .row{
+    //padding: 0 10px;
+    //margin: 0px;
+}
+.music-chart > .row > div:first-of-type{
+    padding: 2px ;
+    margin: 0;
+}
+.music-chart > .row:not(:first-of-type){
+    border-top: thin solid grey ;
+   padding-top: 10px;
+}
+.music-chart-item{
+    //min-width: 150px;
+}
+.music-chart-media a{
+    font-size: 30px;
+}
+.music-chart-album-cover{
+    /*height:150px; */width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.music-chart-new-song{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 25px !important;
+    color: white;
+}
+
+.votes a{
+    font-size: 18px
+}
+a.voted{
+    font-size: 20px !important;
+    color: darkgreen !important;
+    cursor: not-allowed;
+}
+
+@media (max-width: 640px){
+    .music-chart-item ,.music-chart-info{
+        zoom: 0.8;
+    }
+}
+@media (min-width: 1025px){
+    .music-chart-item ,.music-chart-info{
+        zoom: 1.2;
+    }
+}
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+    border: none;
+   // float: left;
+   text-align :left;
+    display:inline-block;
+    height: 22px;
+    min-width: 70px
+}
+
+.rating > input { display: none; }
+.rating > label:before,.rating > span:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+
+.rating > .half:before,.rating > span.half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating > label, .rating > span {
+    color: #ddd;
+    float: right;
+}
+.rating > span{
+    font-size: 0.7em;
+}
+.rating > span.selected,
+.rating > span.selected ~ span { color:goldenrod;  }
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label/* hover previous stars in list */
+{ color: #FFD700;  }
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+
+.rating-chart{
+    max-height: 120px ;
+    max-width: 80px ;
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+
+    display: inline-block;
+    /*margin-left: 5px;*/
+
+}
+.rating-chart span{
+    display: inline-block;
+    width: 10px;
+
+}
+.rating-chart span i{
+    font-size: 8px;
+    right:-5px;
+}
+.rating-chart span:not(span:first-of-type){
+    margin-left: 4px; height: 70px;
+}
+.rating-chart span:nth-of-type(1){
+    background-color: green; height: 80px;
+}
+.rating-chart span:nth-of-type(2){
+    background-color: blue; height: 40px;
+}
+.rating-chart span:nth-of-type(3){
+    background-color: orange; height: 20px;
+}
+.rating-chart span:nth-of-type(4){
+    background-color: yellow; height: 5px;
+}
+.rating-chart span:nth-of-type(5){
+    background-color: red; height: 25px;
+}
+
+.rating-chart-info{
+    font-size: 8px;
+}
+.rating-chart-info div{
+    margin: 0;
+    padding: 0;
+}
+
+/**
+Music Chart2
+*/
+#music-chart2{
+    max-width: 750px;
+    width: 100%;
+    margin: 0px auto;
+}
+#music-chart2, #music-chart2 caption{
+    background: rgba(4,4,9, 0.9); /* #040409;*/
+    color: white;
+}
+#music-chart2 caption{
+    padding: 1px 5px;
+}
+#music-chart2 a, #music-chart2 div.date {
+    color: white !important;
+}
+#music-chart2 div.date {
+    font-size: 15px;
+    line-height: 15px;
+}
+#music-chart2 td{
+    padding: 0;
+}
+#music-chart2 .prev_rank{
+    display: inline-block;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    padding:10px 5px;
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 12px;
+    margin: 10px 2px;
+}
+.callout-number{
+    display: inline-block;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    padding:7px 4px;
+    width: 25px;
+    height: 25px;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 10px;
+}
+#music-chart2 .movement{
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 10px auto;
+    line-height: 12px;
+    font-size: 30px;
+    padding: 2px;
+}
+
+#music-chart2 .position{
+    display: inline-block;
+    font-size: 120px;
+    line-height: 120px;
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace;
+}
+#music-chart2 .details{
+    padding: 10px;
+    margin: 0px;
+}
+#music-chart2 .artist{
+    color:royalblue;
+    font-size: 22px;
+    line-height: 22px;
+    margin-top: 10px;
+    weight: bold;
+}
+#music-chart2 .title{
+
+}
+#music-chart2 a.vote {
+    border: 2px solid white !important;
+    font-size: 11px !important;;
+    padding: 2px !important;;
+    line-height: 8px !important;;
+    margin-top: -5px !important;;
+}
+#music-chart2 div.voting {
+    font-size: 11px;
+    padding: 2px;
+    line-height: 14px;
+    border: dotted thin white;
+}
+#music-chart2 .icons a {
+    font-size: 22px;
+    padding: 5px;
+}
+table#music-chart2 tbody tr td{
+    padding: 10px !important;
+    margin: 10px !important;;
+}
+table#music-chart2  > thead > tr > th, table#music-chart2  > tbody > tr > th, table#music-chart2  > tfoot > tr > th, table#music-chart2  > thead > tr > td, table#music-chart2  > tbody > tr > td, table#music-chart2  > tfoot > tr > td {
+    border-top: 1px solid #d2d2d2;
+    border: 1px solid #d2d2d2;
+    line-height: 2.5;
+    padding-left: 7px;
+    vertical-align: top;
+}
+
+div.callout {
+    /*height: 60px;*/
+    width: 180px;
+    float: left;
+}
+
+div.callout {
+    background-color: #1d1d21;
+    background-image: -moz-linear-gradient(top, #1d1d21, #1d1d21);
+    position: relative;
+    color: white;
+    padding: 0px;
+    border-radius: 3px;
+    margin: 25px;
+    min-height: 50px;
+    border: 1px solid #1d1d21;
+
+    /*box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;*/
+}
+
+.callout::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border: 0.8em solid transparent;
+    position: absolute;
+}
+
+.callout.top::before {
+    left: 45%;
+    bottom: -20px;
+    border-top: 10px solid #1d1d21;
+}
+
+.callout.bottom::before {
+    left: 45%;
+    top: -20px;
+    border-bottom: 10px solid #1d1d21;
+}
+
+.callout.left::before {
+    right: -20px;
+    top: 40%;
+    border-left: 10px solid #1d1d21;
+}
+
+.callout.right::before {
+    left: -20px;
+    top: 40%;
+    border-right: 10px solid #1d1d21;
+}
+
+.callout.top-left::before {
+    left: 7px;
+    bottom: -20px;
+    border-top: 10px solid #1d1d21;
+}
+
+.callout.top-right::before {
+    right: 7px;
+    bottom: -20px;
+    border-top: 10px solid #1d1d21;
+}
+.chart-callout{
+    margin: 5px !important;
+    //background-color: green;
+    border: thin solid white;
+}
